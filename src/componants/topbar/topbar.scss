@@ -8,15 +8,16 @@
     color:  $mainColor;
     position: fixed;
     top: 0;
-    z-index: 2;
-     
+    z-index: 3;
+    transition: all 1s ease; 
     .wrapper{
          padding: 10px 30px;
          display: flex;
          align-items: center;
          justify-content: space-between;
 
-          .left{
+          .left
+          {
             display: flex;
             align-items: center;
             .logo{
@@ -25,8 +26,9 @@
                 text-decoration: none;
                 color: inherit;
                 margin-right: 40px;
-            }
-            .itemcontainer{
+                }
+            .itemcontainer
+            {
                 display: flex;
                 align-items: center;
                 margin-left: 30px;
@@ -34,7 +36,7 @@
                 .icon{
                     font-style: 18px;
                     margin-right: 5px;
-                }   
+                    }   
                     span{
                         font-size: 15px;
                         font-weight: 400;
@@ -42,5 +44,47 @@
                 
             }
           }
+          .right
+          {
+            .hamburger{
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+              
+              span{
+                width: 100px;
+                height: 2px;
+                background-color: $mainColor;
+                transform-origin: left;
+                transition: all 2s ease;
+                //justify-content: center;
+
+              }
+            }
+          }
      }
+     &.active{
+         background-color: $mainColor;
+         color: white;
+
+         .hamburger{
+             span{
+                &:first-child{
+                background-color: white;
+                transform: rotate(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:last-child{
+                    background-color: white;
+                    transform: rotate(-45deg);
+                }
+             }
+            } 
+        }
+      
 }
