@@ -1,14 +1,21 @@
+@import './../../global.scss';
+
 .work{
     background-color: rgb(197, 227, 235);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    
 
         .arrow{
             height: 50px;
             position: absolute;
             cursor: pointer;
+
+            @include mobile{
+                display: none;
+            }
 
             &.left{
                 left: 100px;
@@ -27,8 +34,16 @@
         left: 0;
         transition: all 1s ease-in-out;
 
+        @include mobile{
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
             .container{
                 width: 100vw;
+                //height: 100vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -42,6 +57,14 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    
+                    @include mobile{
+                        width: 80%;
+                        height: 150px;
+                        margin-top: 15px;
+                        //margin: 3px 0;
+                        //overflow: hidden;
+                    }
 
                     .left{
                         flex: 4;
